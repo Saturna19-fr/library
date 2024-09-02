@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, redirect, url_for, session,  
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://mysql:sql35@eu.saturna19.fr:3307/library"
+app.config["SQLALCHEMY_DATABASE_URI"] = environ.get("DATABASE_CONNECTION_STRING")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
