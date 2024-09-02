@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan</title>
+</head>
+<body>
+    <script>
+        window.apikey = "{{apikey}}"
+        window.baseurl = "{{baseurl}}"
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2/dist/quagga.min.js"></script>
+    <h1>Scan</h1>
+    <select id="sourceSelect"></select>
+    <button id="startButton">Start</button>
+    <button id="resetButton">Stop</button>
+    <p id="result"></p>
+    <video id="video" width="300" height="200" style="border: 1px solid gray"></video>    <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js"></script>
+    <form action="" onsubmit="event.preventDefault(); window.searchManual()">
+        <input type="tel" id="isbn" placeholder="ISBN">
+        <button type="submit">Ajouter manuellement</button>
+    </form>
+    
+    <script src="{{ url_for('static', filename='js/reader.js') }}"></script>
+</body>
+</html>
