@@ -18,6 +18,8 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  GH_ACCOUNT: ${{ vars.GH_ACCOUNT }}
+  GH_PASSWORD: ${{ secrets.GH_PASSWORD }}
 
 
 jobs:
@@ -57,7 +59,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ env.GH_ACCOUNT }}
-          password: ${{ secrets.GH_PASSWORD }}
+          password: ${{ env.GH_PASSWORD }}
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
