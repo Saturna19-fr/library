@@ -38,4 +38,5 @@ def addbook():
         return jsonify({"status": 500, "message": f"Internal Server Error {e}"})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=443, debug=True, load_dotenv=True, use_reloader=True, ssl_context = ('.local/cert1.pem', '.local/privkey1.pem'))
+    # app.run(host="0.0.0.0", port=443, debug=True, load_dotenv=True, use_reloader=True, ssl_context = ('.local/cert1.pem', '.local/privkey1.pem'))
+    app.run(host="0.0.0.0", port=5000, load_dotenv=True)
