@@ -1,6 +1,9 @@
 from flask import Flask, request, render_template, redirect, url_for, session,  jsonify
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
+from dotenv import load_dotenv
+
+load_dotenv()
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = environ.get("DATABASE_CONNECTION_STRING")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -33,5 +36,6 @@ def addbook():
         return jsonify({"status": 200, "message": "Book added successfully", "id": book.id})
     except Exception as e:
         return jsonify({"status": 500, "message": f"Internal Server Error {e}"})
-with app.app_context():
-    app.run(host="0.0.0.0", port=443, debug=True, load_dotenv=True, use_reloader=True, ssl_context = ('cert1.pem', 'privkey1.pem'))
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=443, debug=True, load_dotenv=True, use_reloader=True, ssl_context = ('.local/cert1.pem', '.local/privkey1.pem'))

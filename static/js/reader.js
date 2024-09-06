@@ -34,7 +34,7 @@ window.addEventListener('load', function () {
                 if (debounce) return false;
                 debounce = true;
                 codeReader.reset()
-                fetch(window.baseurl + ISBN, { headers: myHeaders })
+                fetch(window.baseurl + '/book/' + ISBN, { headers: myHeaders })
                     //db281ba3800a48399ac5ba7de01f8763
                     .then(response => response.json())
                     .then(dataapi => {
@@ -54,14 +54,14 @@ window.addEventListener('load', function () {
                             addItem(dataapi.book.title_long, ISBN);
                             setTimeout(function () {
                                 startCamera();
-                            }, 5000);
+                            }, 2000);
                         }
                     })
                     .catch((r) => {
                         resultparag.innerHTML = "Erreur ! " + r;
                         setTimeout(function () {
                             startCamera();
-                        }, 5000);
+                        }, 2000);
             
                     })
             }
@@ -88,7 +88,7 @@ window.addEventListener('load', function () {
                         }
                         setTimeout(function () {
                             startCamera();
-                        }, 5000);
+                        }, 2000);
                     })
             }
 
@@ -117,7 +117,7 @@ window.addEventListener('load', function () {
             }
             setTimeout(function () {
                 startCamera();
-            }, 5000);
+            }, 2000);
 
             document.getElementById('startButton').addEventListener('click', () => startCamera())
         })

@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scan</title>
+    <style>
+        body {
+            background-color: rgb(22, 22, 22);
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -17,7 +23,8 @@
     <button id="startButton">Start</button>
     <button id="resetButton">Stop</button>
     <p id="result"></p>
-    <video id="video" width="300" height="200" style="border: 1px solid gray"></video>    <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js"></script>
+    <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
+    <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js"></script>
     <form action="" onsubmit="event.preventDefault(); window.searchManual()">
         <input type="tel" id="isbn" placeholder="ISBN">
         <button type="submit">Ajouter manuellement</button>
