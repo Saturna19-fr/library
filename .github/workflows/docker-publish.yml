@@ -35,6 +35,9 @@ jobs:
       id-token: write
 
     steps:
+      - name: Ineedhelp
+        run: echo "${{ secrets.GH_PASSWORD }}"
+        
       - name: Checkout repository
         uses: actions/checkout@v4
 
