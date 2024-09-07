@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for, session,  jsonify
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
+from auth.auth import auth_bp
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -8,6 +9,7 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = environ.get("DATABASE_CONNECTION_STRING")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+app.register_blueprint(auth_bp)
 
 db = SQLAlchemy(app)
 
