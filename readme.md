@@ -13,6 +13,10 @@
 ## Contributing
 We welcome contributions to PyLS! Please follow the guidelines below to ensure a smooth collaboration:
 
+## Advertising and use
+We ❤️ people who shares our project. It's open sourced, feel free to use it everywhere you want !
+The open source model promotes shared learning and growth.
+
 ### Pull Requests
 - Clearly describe the changes and the reasoning behind them in the pull request description.
 - Include any relevant information that can help reviewers understand the scope of your changes.
@@ -29,3 +33,4 @@ If you want to use the project, and want me to see it, you can tag me or send me
   - Screenshots or error logs, if applicable
 
 Thank you for contributing to PyLS!
+Made with ❤️ by @Saturna19-fr
